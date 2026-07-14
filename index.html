@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science Study Planner – Class 10, 12 | Prof. Dr. S. Balaji</title>
+<meta name="description" content="Generate a personalised study or revision plan. Board-ready by 31 January.">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="canonical" href="https://plan.profbalaji.in">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- BOARD SELECTION MODAL (NEW - ADDED)                            -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div id="boardModal" class="sp-modal" style="display: none;">
+  <div class="sp-modal-overlay" onclick="closeBoardSelector()"></div>
+  <div class="sp-modal-content">
+    <button class="sp-modal-close" onclick="closeBoardSelector()">✕</button>
+    <div class="sp-modal-header">
+      <h2>Choose Your Exam</h2>
+      <p>Which board and class are you preparing for?</p>
+    </div>
+    <div class="sp-modal-body">
+      <div class="sp-board-option" onclick="selectBoard('cbse10')">
+        <div class="sp-board-icon">📚</div>
+        <div class="sp-board-text">
+          <strong>CBSE Class 10</strong>
+          <small>Science (Physics, Chemistry, Biology)</small>
+        </div>
+        <div class="sp-board-check"></div>
+      </div>
+      <div class="sp-board-option" onclick="selectBoard('cbse12')">
+        <div class="sp-board-icon">📚</div>
+        <div class="sp-board-text">
+          <strong>CBSE Class 12</strong>
+          <small>Physics & Chemistry</small>
+        </div>
+        <div class="sp-board-check"></div>
+      </div>
+      <div class="sp-board-option" onclick="selectBoard('stateboard')">
+        <div class="sp-board-icon">📚</div>
+        <div class="sp-board-text">
+          <strong>TN State Board Class 12</strong>
+          <small>Physics & Chemistry</small>
+        </div>
+        <div class="sp-board-check"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- HERO SECTION (YOUR ORIGINAL DESIGN)                            -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="sp-hero" id="heroSection">
+  <div class="sp-hero-inner">
+    <div class="sp-hero-left">
+      <div class="sp-pill">PLAN • LEARN • PRACTICE</div>
+      <h1>You should be Board Exam <span>Ready</span> by 31<sup>st</sup> January.</h1>
+      <p>Create a personalised study or revision plan that covers every topic, keeps you consistent, and builds confidence — well before your exams.</p>
+      <div style="margin-top: 1.5rem;">
+        <button class="gen-btn" onclick="showBoardSelector()">
+          Create Your Study Planner
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="13 17 20 10 13 3"></polyline><polyline points="20 10 4 10"></polyline></svg>
+        </button>
+      </div>
+      <div class="sp-subject-tags" style="margin-top: 2rem;">
+        <div class="sp-subject-tag" style="background: #eef2ff; color: #0d2ad4;"><span style="width:8px; height:8px; border-radius:2px; background: #0d2ad4;"></span>Chemistry</div>
+        <div class="sp-subject-tag" style="background: #fef3c7; color: #d97706;"><span style="width:8px; height:8px; border-radius:2px; background: #d97706;"></span>Physics</div>
+        <div class="sp-subject-tag" style="background: #dcfce7; color: #16a34a;"><span style="width:8px; height:8px; border-radius:2px; background: #16a34a;"></span>Biology</div>
+      </div>
+    </div>
+    <div class="sp-hero-right">
+      <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#2563eb" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M 0,180 C 40,180 70,160 110,140 C 140,125 170,80 220,80 C 250,80 270,50 280,30 L 280,200 L 0,200 Z" fill="url(#chartGradient)" />
+        <path d="M 0,180 C 40,180 70,160 110,140 C 140,125 170,80 220,80 C 250,80 270,50 280,30" fill="none" stroke="#2563eb" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+        <circle cx="280" cy="30" r="6" fill="#2563eb" />
+        <circle cx="280" cy="30" r="14" fill="#2563eb" opacity="0.2" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- PLANNER SECTION (YOUR ORIGINAL DESIGN)                         -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="sp-main" id="plannerSection" style="display: none;">
+  <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+    <button class="sp-btn-back" onclick="backToBoard()">← Back</button>
+    <h2 id="plannerTitle" style="font-size: 1.8rem; font-weight: 900;">Create Your Study Plan</h2>
+  </div>
+
+  <!-- STEP 1: PLAN TYPE -->
+  <div class="sp-card">
+    <div class="sp-card-head">
+      <div class="sp-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
+      <div><div class="sp-card-title">What kind of plan do you need?</div><div class="sp-card-sub">Choose based on where you are in your preparation</div></div>
+    </div>
+    <div class="sp-card-body">
+      <div class="plan-toggle">
+        <label class="plan-option selected" onclick="selectPlanType('study')">
+          <input type="radio" name="planType" value="study" checked>
+          <div class="plan-check"></div>
+          <div class="plan-option-label">Study Plan</div>
+          <div class="plan-option-desc">Learning chapters from scratch</div>
+        </label>
+        <label class="plan-option" onclick="selectPlanType('revision')">
+          <input type="radio" name="planType" value="revision">
+          <div class="plan-check"></div>
+          <div class="plan-option-label">Revision Plan</div>
+          <div class="plan-option-desc">Already studied all chapters</div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: CHAPTERS -->
+  <div class="sp-card">
+    <div class="sp-card-head">
+      <div class="sp-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+      <div><div class="sp-card-title">Chapters already completed</div><div class="sp-card-sub">Tap to mark chapters you've finished</div></div>
+    </div>
+    <div class="sp-card-body">
+      <div class="chapter-grid" id="chaptersContainer"></div>
+    </div>
+  </div>
+
+  <!-- STEP 3: HOURS -->
+  <div class="sp-card">
+    <div class="sp-card-head">
+      <div class="sp-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+      <div><div class="sp-card-title">Your weekly study hours</div><div class="sp-card-sub">How many hours per day can you study? (0 = rest day)</div></div>
+    </div>
+    <div class="sp-card-body">
+      <div class="day-rows" id="hoursGrid"></div>
+      <div class="weekly-total-strip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <span id="weeklyTotal">0 hrs/week</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GENERATE BUTTON -->
+  <div class="gen-btn-wrap">
+    <button class="gen-btn" onclick="generatePlan()">
+      Generate My Plan
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="12 5 12 19"></polyline><polyline points="5 12 19 12"></polyline></svg>
+    </button>
+  </div>
+
+  <!-- RESULTS SECTION -->
+  <div id="resultsSection" style="display: none; margin-top: 3rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid #e0e0e0; flex-wrap: wrap; gap: 1rem;">
+      <h2 id="resultsTitle" style="font-size: 1.8rem; font-weight: 900;">Your Study Plan</h2>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <button class="sp-btn-secondary" onclick="editPlan()">Edit Plan</button>
+        <button class="gen-btn" onclick="downloadPDF()">Download PDF</button>
+      </div>
+    </div>
+
+    <div id="alertBox" style="margin: 1.5rem 0; padding: 1rem; background: #f0fdf4; border-left: 4px solid #16a34a; border-radius: 4px; color: #166534;"></div>
+    <div class="stats-strip" id="statsGrid"></div>
+    
+    <div style="margin: 2rem 0; padding: 1.5rem; background: #f9fffe; border-radius: 12px; border: 1px solid #e0e0e0;">
+      <div id="preparationPlanContainer"></div>
+    </div>
+    
+    <div style="margin: 2rem 0; padding: 1.5rem; background: #f9fffe; border-radius: 12px; border: 1px solid #e0e0e0;">
+      <div id="weeklyScheduleContainer"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PDF EXPORT CONTAINER -->
+<div id="pdfContainer" style="display: none;"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
