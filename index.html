@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner | Prof. Dr. S. Balaji Science Academy</title>
+    <meta name="description" content="Build your personalized study plan and get board-ready by 31 January. Free planning tool for CBSE & State Board exams.">
+    <meta name="keywords" content="Study Plan, CBSE, State Board, Class 12, Class 10, Board Exam Preparation">
+    <meta name="author" content="Prof. Dr. S. Balaji">
+    <meta property="og:title" content="Study Planner | Prof. Dr. S. Balaji">
+    <meta property="og:description" content="Build your personalized study plan for board exams.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://plan.profbalaji.in">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.ico">
+    <link rel="canonical" href="https://plan.profbalaji.in">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WCDYT2L1C7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WCDYT2L1C7');
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="https://profbalaji.in" class="logo">PROF. DR. S. BALAJI SCIENCE ACADEMY</a>
+            
+            <nav class="nav-desktop">
+                <a href="https://profbalaji.in" class="nav-link">Home</a>
+                <a href="https://profbalaji.in#courses-section" class="nav-link">Courses</a>
+                <a href="https://plan.profbalaji.in" class="nav-link active">Study Planner</a>
+                <a href="https://profbalaji.in#blog-section" class="nav-link">Blog</a>
+                <a href="tel:+919787692116" class="nav-cta">Call</a>
+            </nav>
+
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="nav-mobile" id="navMobile">
+            <button class="close-menu" id="closeMenu">✕</button>
+            <a href="https://profbalaji.in" class="nav-link-mobile">Home</a>
+            <a href="https://profbalaji.in#courses-section" class="nav-link-mobile">Courses</a>
+            <a href="https://plan.profbalaji.in" class="nav-link-mobile active">Study Planner</a>
+            <a href="https://profbalaji.in#blog-section" class="nav-link-mobile">Blog</a>
+            <a href="tel:+919787692116" class="nav-link-mobile cta-mobile">Call</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="heroSection">
+        <div class="hero-wrapper">
+<!-- LEFT CONTENT -->
+            <div class="hero-content">
+                <div class="hero-tagline">PLAN <span style="color: #0d2ad4;">.</span> LEARN <span style="color: #0d2ad4;">.</span> PRACTICE</div>
+                <h1 class="hero-title">You Should be Board Exam <span>Ready</span> by 31<sup>st</sup> January.</h1>
+                <p class="hero-subtitle">Create a personalized study planner that keeps you consistent, covers every topic, and builds confidence — well before your exams.</p>
+                
+                <div class="hero-buttons">
+                    <button class="btn-create" onclick="showBoardSelector()">
+                        Create Your Study Planner
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="13 17 20 10 13 3"></polyline>
+                            <polyline points="20 10 4 10"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="hero-benefits">
+                    <div class="benefit-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span>Finish Syllabus On Time</span>
+                    </div>
+                    <div class="benefit-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span>Focused Daily Plan</span>
+                    </div>
+                    <div class="benefit-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                        <span>Stronger Revision & Practice</span>
+                    </div>
+                </div>
+            </div>
+
+<!-- RIGHT CONTENT - CALENDAR SVG -->
+            <div class="hero-visual" id="heroVisual">
+                <div class="visual-bg-decorations">
+                    <svg class="bg-line-chart" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#2563eb" stop-opacity="0.15"/>
+                                <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M 0,180 C 40,180 70,160 110,140 C 140,125 170,80 220,80 C 250,80 270,50 280,30 L 280,200 L 0,200 Z" fill="url(#chartGradient)" />
+                        <path d="M 0,180 C 40,180 70,160 110,140 C 140,125 170,80 220,80 C 250,80 270,50 280,30" fill="none" stroke="#2563eb" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="280" cy="30" r="6" fill="#2563eb" />
+                        <circle cx="280" cy="30" r="14" fill="#2563eb" opacity="0.2" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOARD SELECTION MODAL (NEW) -->
+    <div id="boardModal" class="modal" style="display: none;">
+        <div class="modal-overlay" onclick="closeBoardSelector()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeBoardSelector()">✕</button>
+            <div class="modal-header">
+                <h2>Choose Your Exam</h2>
+                <p>Which board and class are you preparing for?</p>
+            </div>
+            <div class="modal-body">
+                <div class="board-option" onclick="selectBoard('cbse10')">
+                    <div class="board-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="board-text">
+                        <strong>CBSE Class 10</strong>
+                        <small>Science (Physics, Chemistry, Biology)</small>
+                    </div>
+                    <div class="board-check"></div>
+                </div>
+
+                <div class="board-option" onclick="selectBoard('cbse12')">
+                    <div class="board-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="board-text">
+                        <strong>CBSE Class 12</strong>
+                        <small>Physics & Chemistry</small>
+                    </div>
+                    <div class="board-check"></div>
+                </div>
+
+                <div class="board-option" onclick="selectBoard('stateboard')">
+                    <div class="board-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="board-text">
+                        <strong>TN State Board Class 12</strong>
+                        <small>Physics & Chemistry</small>
+                    </div>
+                    <div class="board-check"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PLANNER SECTION -->
+    <section class="planner-section" id="plannerSection" style="display: none;">
+        <div class="planner-container">
+            <div class="planner-header">
+                <button class="btn-back" onclick="backToBoard()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    Back
+                </button>
+                <h2 id="plannerTitle">Create Your Study Plan</h2>
+            </div>
+
+            <!-- Step 1: Plan Type -->
+            <div class="planner-card">
+                <div class="card-head">
+                    <div class="card-head-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>What kind of plan do you need?</h3>
+                        <p>Choose based on where you are in your preparation</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="plan-type-toggle">
+                        <label class="toggle-option selected" onclick="selectPlanType('study')">
+                            <input type="radio" name="planType" value="study" checked>
+                            <span class="toggle-check"></span>
+                            <div class="toggle-content">
+                                <strong>Study Plan</strong>
+                                <small>Learning chapters from scratch</small>
+                            </div>
+                        </label>
+                        <label class="toggle-option" onclick="selectPlanType('revision')">
+                            <input type="radio" name="planType" value="revision">
+                            <span class="toggle-check"></span>
+                            <div class="toggle-content">
+                                <strong>Revision Plan</strong>
+                                <small>Already studied all chapters</small>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Chapters -->
+            <div class="planner-card">
+                <div class="card-head">
+                    <div class="card-head-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 id="chaptersTitle">Chapters already completed</h3>
+                        <p id="chaptersSubtitle">Tap to mark chapters you've finished</p>
+                    </div>
+                </div>
+                <div class="card-body" id="chaptersContainer"></div>
+            </div>
+
+            <!-- Step 3: Schedule -->
+            <div class="planner-card">
+                <div class="card-head">
+                    <div class="card-head-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>Your weekly study hours</h3>
+                        <p>How many hours per day can you study? (0 = rest day)</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="hours-grid" id="hoursGrid"></div>
+                    <div class="weekly-total">
+                        <strong>Weekly Total:</strong> <span id="weeklyTotal">0 hrs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Generate Button -->
+            <div class="form-actions">
+                <button class="btn-primary" onclick="generatePlan()">Generate My Plan</button>
+            </div>
+        </div>
+
+        <!-- RESULTS SECTION -->
+        <div id="resultsSection" style="display: none;">
+            <div class="results-container">
+                <div class="results-header">
+                    <h2 id="resultsTitle">Your Study Plan</h2>
+                    <div class="results-actions">
+                        <button class="btn-secondary" onclick="editPlan()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                            Edit
+                        </button>
+                        <button class="btn-primary" onclick="downloadPDF()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Download PDF
+                        </button>
+                    </div>
+                </div>
+
+                <div id="alertBox" style="margin: 1.5rem 0; padding: 1rem; background: #f0fdf4; border-left: 4px solid #16a34a; border-radius: 4px; color: #166534;"></div>
+                <div class="stats-grid" id="statsGrid"></div>
+                
+                <!-- Preparation Timeline -->
+                <div style="margin: 2rem 0; padding: 1.5rem; background: #f9fffe; border-radius: 12px; border: 1px solid #e0e0e0;">
+                    <div id="preparationPlanContainer"></div>
+                </div>
+                
+                <!-- Weekly Schedule -->
+                <div style="margin: 2rem 0; padding: 1.5rem; background: #f9fffe; border-radius: 12px; border: 1px solid #e0e0e0;">
+                    <div id="weeklyScheduleContainer"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-icons">
+            <a href="tel:+919787692116" class="footer-icon phone" title="Call">
+                <i class="bi bi-telephone-fill"></i>
+            </a>
+            <a href="mailto:prof.balaji13@gmail.com" class="footer-icon mail" title="Email">
+                <i class="bi bi-envelope-at-fill"></i>
+            </a>
+            <a href="https://g.co/kgs/EkVWVxL" class="footer-icon business" title="Google Business">
+                <i class="bi bi-geo-alt-fill"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/profdrsbalaji" class="footer-icon linkedin" title="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://scholar.google.co.kr/citations?hl=en&pli=1&user=9NAUZ5MAAAAJ" class="footer-icon scholar" title="Google Scholar">
+                <i class="bi bi-mortarboard-fill"></i>
+            </a>
+            <a href="https://profbalaji.substack.com/" class="footer-icon substack" title="Substack">
+                <i class="bi bi-substack"></i>
+            </a>
+            <a href="https://www.youtube.com/@CBSEdigest" class="footer-icon youtube" title="YouTube">
+                <i class="bi bi-youtube"></i>
+            </a>
+        </div>
+        <p class="footer-copyright">© 2026 Prof. Dr. S. Balaji. All Rights Reserved.</p>
+    </footer>
+
+    <!-- PDF Container -->
+    <div id="pdfContainer" style="display: none;"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
